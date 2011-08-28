@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link href="css/twentythings.css" rel="stylesheet" />
+		<script type="text/javascript"> 
+      document.write('<link rel="stylesheet" type="text/css" media="all" href="css/hideOnLoad.css" />');
+      
+      if( window.location.hash.match('\/') ) {
+        window.location = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + window.location.hash.slice(1);
+      }
+
+      var SERVER_VARIABLES = {
+        PAGE: "Page",
+        PAGES:  "Pages",
+        THING:  "THING",
+        FOREWORD:  "FOREWORD",
+        LANG: "en-US",
+        SITE_VERSION: 49,
+        FACEBOOK_MESSAGE: "A fun guidebook from Google on things you've always wanted to know about browsers & the web (but were afraid to ask",
+        FACEBOOK_MESSAGE_SINGLE: "A fun fact I learned today from Google's guidebook to browsers and the web.",
+        TWITTER_MESSAGE: "A fun guidebook from Google on things you've always wanted to know about browsers & the web:",
+        TWITTER_MESSAGE_SINGLE: "A fun fact I learned today from Google's guidebook to browsers and the web: ",
+        BUZZ_MESSAGE: "A fun guidebook from Google on things you've always wanted to know about browsers & the web (but were afraid to ask): http://goo.gl/20things",
+        BUZZ_MESSAGE_SINGLE: "A fun fact I learned today from Google's guidebook to browsers and the web: ",
+        SOLID_BOOK_COLOR: "#5873a0"      };
+      
+      // Set language for use by Google +1 button.
+      window.___gcfg = {lang: SERVER_VARIABLES.LANG};
+    </script>
+	
+	</head>
+	<body class="en-US">
+		<div id="preloader">
+	    <div class="contents">
+	      <canvas class="animation"></canvas>
+	      <div class="progress">
+	        <div class="fill"></div>
+	      </div>
+	    </div>
+	  </div>
+
+		<header>
+			<nav>
+	      <ul>
+	        <li class="table-of-things"><a href="/table-of-things">TABLE OF THINGS</a></li>
+	        <li class="divider1"></li>
+	        <li class="about"><a href="/foreword/1">FOREWORD</a></li>
+	        <li class="divider2"></li>
+	        <li class="credits"><a href="/credits">CREDITS</a></li>
+	        <li class="divider2"></li>
+	      </ul>
+	    </nav>
+	    
+	    <div id="language-selector">
+      	<div id="language-selector-title"><a>English (US)</a></div>
+      	<div id="language-selector-list">
+        	<ul>
+        		<li></li>
+    			</ul>
+				</div>
+			</div>
+		
+			<!-- Input type="search" is currently too inconsistent across browsers and platforms -->
+	    <input id="search-field" type="text" value="Search Book">
+    </header>
+
+		<!-- Holds search results -->
+	  <div id="search-dropdown">
+	    <div class="fader">
+	      <div class="background-top"></div>
+	      <div class="background-bottom"></div>
+	      <div class="results">
+	        <div class="things">
+	          <h4><span>Search Book</span></h4>
+	          <hr>
+	        </div>
+	        <div class="keywords">
+	          <h4><span>KEYWORDS</span></h4>
+	          <hr>
+	        </div>
+	        <div class="empty">No results found.</div>
+	      </div>
+	    </div>
+	  </div>
+
+
+		<!-- Left side grey overlay that masks out the book -->
+	  <div id="grey-mask"></div>
+	  
+	  <div id="book">
+	    <div id="shadow">
+	      <div class="shadow-left"></div>
+	      <div class="shadow-right"></div>
+	    </div>
+	    <div id="spine">
+	      <div class="spine-top"></div>
+	      <div class="spine-bottom"></div>
+	    </div>
+	    <div id="front-cover-bookmark">
+	      <div class="content">
+	        <p>What’s a cookie? How do I protect myself on the web? And most importantly: What happens if a truck runs over my laptop?</p>
+											<p>For things you’ve always wanted to know about the web but were afraid to ask, read on.</p>        <a href="/en-US/web-apps/3" class="open-book">OPEN BOOK</a>
+	        <canvas id="flip-intro"></canvas>
+	      </div>
+	    </div>
+	    <div id="sharer">
+	      <div class="background-top"></div>
+	      <div class="background-bottom"></div>
+	      <div class="content">
+	        <ul>
+	          <li class="facebook"><a href="#" title="Facebook"></a></li>
+	          <li class="twitter"><a href="#" title="Twitter"></a></li>
+	          <li class="gplus"></li>
+	          <li class="print"><a href="#" target="_blank" title="Print Thing">Print Thing</a></li>
+	        </ul>
+	        <p class="index">THING</p>
+	        <p class="instruction">SHARE THING</p>
+	      </div>
+	    </div>
+
+			<div id="front-cover">
+	      <img src="css/images/front-cover.jpg" width="830" height="520">
+	    </div>
+	    <div id="back-cover">
+	      <img src="css/images/back-cover.jpg" data-src-flipped="css/images/back-cover-flipped.jpg" width="830" height="520">
+	    </div>
+	    <div id="page-shadow-overlay"></div>
+	    <div id="pages">
+	    </div>
+	    <div id="left-page">
+				<img src="css/images/left-page.jpg" data-src-flipped="css/images/left-page-flipped.jpg" width="830" height="520">
+			</div>
+			<div id="right-page">
+				<div id="paperstack">
+					<div class="paper s1"></div>
+					<div class="paper s2"></div>
+					<div class="paper s3"></div>
+					<div class="paper s4"></div>
+					<div class="paper s5"></div>
+					<div class="paper s6"></div>
+					<div class="paper s7"></div>
+					<div class="shadow"></div>
+				</div>
+				<img src="css/images/right-page.jpg" width="830" height="520">
+			</div>
+
+		</div>
+		
+		
+		
+		<nav id="chapter-nav">
+			<p>20 Things</p>
+			<ul>
+											
+				<li class="what-is-the-internet">
+					<a href="/what-is-the-internet" class="cnItem" title="What is the Internet?"  data-title="What is the Internet?" data-subtitle="or, 'You Say Tomato, I Say TCP/IP'" data-article="what-is-the-internet" data-globalstartpage="4" data-globalendpage="6" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>1</span>
+					</a>
+					<a class="over" href="/what-is-the-internet">
+						<div class="description">
+							<p class="title">What is the Internet?</p>
+							<p class="pagenumber">4-6</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">1</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="cloud-computing">
+					<a href="/cloud-computing" class="cnItem" title="Cloud Computing"  data-title="Cloud Computing" data-subtitle="or, why it's ok for a truck to crush your laptop" data-article="cloud-computing" data-globalstartpage="7" data-globalendpage="8" data-numberofpages="2">
+						<div class="illustration"></div>
+						<span>2</span>
+					</a>
+					<a class="over" href="/cloud-computing">
+						<div class="description">
+							<p class="title">Cloud Computing</p>
+							<p class="pagenumber">7-8</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">2</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="web-apps">
+					<a href="/web-apps" class="cnItem" title="Web Apps"  data-title="Web Apps" data-subtitle="or, 'Life, Liberty and the Pursuit of Appiness'" data-article="web-apps" data-globalstartpage="9" data-globalendpage="11" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>3</span>
+					</a>
+					<a class="over" href="/web-apps">
+						<div class="description">
+							<p class="title">Web Apps</p>
+							<p class="pagenumber">9-11</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">3</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="html">
+					<a href="/html" class="cnItem" title="HTML, JavaScript, CSS and more"  data-title="HTML, JavaScript, CSS and more" data-subtitle="or, this is not your mom's AJAX" data-article="html" data-globalstartpage="12" data-globalendpage="14" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>4</span>
+					</a>
+					<a class="over" href="/html">
+						<div class="description">
+							<p class="title">HTML, JavaScript, CSS and more</p>
+							<p class="pagenumber">12-14</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">4</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="html5">
+					<a href="/html5" class="cnItem" title="HTML5"  data-title="HTML5" data-subtitle="or, in the beginning there was no &lt;video&gt;" data-article="html5" data-globalstartpage="15" data-globalendpage="16" data-numberofpages="2">
+						<div class="illustration"></div>
+						<span>5</span>
+					</a>
+					<a class="over" href="/html5">
+						<div class="description">
+							<p class="title">HTML5</p>
+							<p class="pagenumber">15-16</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">5</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="threed">
+					<a href="/threed" class="cnItem" title="3D in the Browser"  data-title="3D in the Browser" data-subtitle="or, browsing with more depth" data-article="threed" data-globalstartpage="17" data-globalendpage="19" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>6</span>
+					</a>
+					<a class="over" href="/threed">
+						<div class="description">
+							<p class="title">3D in the Browser</p>
+							<p class="pagenumber">17-19</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">6</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="old-vs-new-browsers">
+					<a href="/old-vs-new-browsers" class="cnItem" title="A Browser Madrigal"  data-title="A Browser Madrigal" data-subtitle="or, old vs. modern browsers" data-article="old-vs-new-browsers" data-globalstartpage="20" data-globalendpage="23" data-numberofpages="4">
+						<div class="illustration"></div>
+						<span>7</span>
+					</a>
+					<a class="over" href="/old-vs-new-browsers">
+						<div class="description">
+							<p class="title">A Browser Madrigal</p>
+							<p class="pagenumber">20-23</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">7</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="plugins">
+					<a href="/plugins" class="cnItem" title="Plug-ins"  data-title="Plug-ins" data-subtitle="or, pepperoni for your cheese pizza" data-article="plugins" data-globalstartpage="24" data-globalendpage="25" data-numberofpages="2">
+						<div class="illustration"></div>
+						<span>8</span>
+					</a>
+					<a class="over" href="/plugins">
+						<div class="description">
+							<p class="title">Plug-ins</p>
+							<p class="pagenumber">24-25</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">8</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="browser-extensions">
+					<a href="/browser-extensions" class="cnItem" title="Browser Extensions "  data-title="Browser Extensions " data-subtitle="or, superpowers for your browser" data-article="browser-extensions" data-globalstartpage="26" data-globalendpage="28" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>9</span>
+					</a>
+					<a class="over" href="/browser-extensions">
+						<div class="description">
+							<p class="title">Browser Extensions </p>
+							<p class="pagenumber">26-28</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">9</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="sync">
+					<a href="/sync" class="cnItem" title="Synchronizing the Browser"  data-title="Synchronizing the Browser" data-subtitle="or, why it's ok for a truck to crush your laptop, part II" data-article="sync" data-globalstartpage="29" data-globalendpage="30" data-numberofpages="2">
+						<div class="illustration"></div>
+						<span>10</span>
+					</a>
+					<a class="over" href="/sync">
+						<div class="description">
+							<p class="title">Synchronizing the Browser</p>
+							<p class="pagenumber">29-30</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">10</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="browser-cookies">
+					<a href="/browser-cookies" class="cnItem" title="Browser Cookies"  data-title="Browser Cookies" data-subtitle="or, thanks for the memories" data-article="browser-cookies" data-globalstartpage="31" data-globalendpage="32" data-numberofpages="2">
+						<div class="illustration"></div>
+						<span>11</span>
+					</a>
+					<a class="over" href="/browser-cookies">
+						<div class="description">
+							<p class="title">Browser Cookies</p>
+							<p class="pagenumber">31-32</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">11</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="browser-privacy">
+					<a href="/browser-privacy" class="cnItem" title="Browsers and Privacy"  data-title="Browsers and Privacy" data-subtitle="or, giving you choices to protect your privacy in the browser" data-article="browser-privacy" data-globalstartpage="33" data-globalendpage="36" data-numberofpages="4">
+						<div class="illustration"></div>
+						<span>12</span>
+					</a>
+					<a class="over" href="/browser-privacy">
+						<div class="description">
+							<p class="title">Browsers and Privacy</p>
+							<p class="pagenumber">33-36</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">12</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="malware">
+					<a href="/malware" class="cnItem" title="Malware, Phishing, and Security Risks"  data-title="Malware, Phishing, and Security Risks" data-subtitle="or, if it quacks like a duck but isn't a duck" data-article="malware" data-globalstartpage="37" data-globalendpage="39" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>13</span>
+					</a>
+					<a class="over" href="/malware">
+						<div class="description">
+							<p class="title">Malware, Phishing, and Security Risks</p>
+							<p class="pagenumber">37-39</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">13</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="browser-protection">
+					<a href="/browser-protection" class="cnItem" title="How Modern Browsers Help Protect You From Malware and Phishing"  data-title="How Modern Browsers Help Protect You From Malware and Phishing" data-subtitle="or, beware the ne'er-do-wells!" data-article="browser-protection" data-globalstartpage="40" data-globalendpage="42" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>14</span>
+					</a>
+					<a class="over" href="/browser-protection">
+						<div class="description">
+							<p class="title">How Modern Browsers Help Protect You From Malware and Phishing</p>
+							<p class="pagenumber">40-42</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">14</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="url">
+					<a href="/url" class="cnItem" title="Using Web Addresses to Stay Safe"  data-title="Using Web Addresses to Stay Safe" data-subtitle="or, 'my name is URL'" data-article="url" data-globalstartpage="43" data-globalendpage="47" data-numberofpages="5">
+						<div class="illustration"></div>
+						<span>15</span>
+					</a>
+					<a class="over" href="/url">
+						<div class="description">
+							<p class="title">Using Web Addresses to Stay Safe</p>
+							<p class="pagenumber">43-47</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">15</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="dns">
+					<a href="/dns" class="cnItem" title="IP Addresses and DNS"  data-title="IP Addresses and DNS" data-subtitle="or, the phantom phone booth" data-article="dns" data-globalstartpage="48" data-globalendpage="50" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>16</span>
+					</a>
+					<a class="over" href="/dns">
+						<div class="description">
+							<p class="title">IP Addresses and DNS</p>
+							<p class="pagenumber">48-50</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">16</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="identity">
+					<a href="/identity" class="cnItem" title="Validating Identities Online"  data-title="Validating Identities Online" data-subtitle="or,  &quot;Dr. Livingstone, I presume?&quot;" data-article="identity" data-globalstartpage="51" data-globalendpage="53" data-numberofpages="3">
+						<div class="illustration"></div>
+						<span>17</span>
+					</a>
+					<a class="over" href="/identity">
+						<div class="description">
+							<p class="title">Validating Identities Online</p>
+							<p class="pagenumber">51-53</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">17</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="page-load">
+					<a href="/page-load" class="cnItem" title="Evolving to a Faster Web"  data-title="Evolving to a Faster Web" data-subtitle="or, speeding up images, video, and JavaScript on the web" data-article="page-load" data-globalstartpage="54" data-globalendpage="57" data-numberofpages="4">
+						<div class="illustration"></div>
+						<span>18</span>
+					</a>
+					<a class="over" href="/page-load">
+						<div class="description">
+							<p class="title">Evolving to a Faster Web</p>
+							<p class="pagenumber">54-57</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">18</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="open-source">
+					<a href="/open-source" class="cnItem" title="Open Source and Browsers"  data-title="Open Source and Browsers" data-subtitle="or, standing on the shoulders of giants" data-article="open-source" data-globalstartpage="58" data-globalendpage="59" data-numberofpages="2">
+						<div class="illustration"></div>
+						<span>19</span>
+					</a>
+					<a class="over" href="/open-source">
+						<div class="description">
+							<p class="title">Open Source and Browsers</p>
+							<p class="pagenumber">58-59</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">19</p>
+						</div>
+					</a>
+				</li>
+				
+														
+				<li class="conclusion">
+					<a href="/conclusion" class="cnItem" title="19 Things Later..."  data-title="19 Things Later..." data-subtitle="or, a day in the clouds" data-article="conclusion" data-globalstartpage="60" data-globalendpage="61" data-numberofpages="2">
+						<div class="illustration"></div>
+						<span>20</span>
+					</a>
+					<a class="over" href="/conclusion">
+						<div class="description">
+							<p class="title">19 Things Later...</p>
+							<p class="pagenumber">60-61</p>
+						</div>
+						<div class="small-book">
+							<div class="illustration"></div>
+							<p class="index">20</p>
+						</div>
+					</a>
+				</li>
+				
+							
+			</ul>
+		</nav>
+
+		<div id="overlay">
+			<div class="bookmark">
+				<div class="content">
+					<a class="close" href="#">CLOSE</a>
+					<h3>RESUME READING?</h3>
+					<p>You can pick up from where you left off the last time, or start at the beginning. Do you want to:</p>
+					<a class="action resume" href="#">RESUME<br/>READING</a>
+					<a class="action restart" href="#">GO TO THE<br/>BEGINNING</a>
+				</div>
+			</div>
+			
+			<div class="print">
+					<a class="close" href="#">CLOSE</a>
+					<a class="printBook" href="/en-US/all/print"_blank">
+						<h2>Print Book</h2>
+						<p>Print the book (in Letter or A4 size only)</p>
+					</a>
+					<a class="downloadPdf" target="_blank" href="/media/20ThingsILearnedaboutBrowsersandtheWeb.pdf">
+						<h2>Download PDF</h2>
+						<p>Download the book in PDF. Size: 3.3MB</p>
+					</a>
+			</div>
+		</div>
+
+		<div id="articleId">plugins</div><div id="pageNumber">1</div>	<div id="pagination-prev" class=""><a href="/en-US/old-vs-new-browsers/4"><div class="arrow">LOCALE_PREVIOUS_PAGE</div></a></div>
+	<div id="pagination-next" class=""><a href="/en-US/plugins/2"><div class="arrow">LOCALE_NEXT_PAGE</div></a></div>	
+
+		<footer>		
+			<span class="curator">Published by the <a href="http://www.google.com/chrome?brand=CHJN">Google Chrome</a> Team. ©,2010 Google Inc. All Rights Reserved.</span>
+			<div class="right-side">
+				<div class="divider"></div>
+				<div class="sharing">
+					<p>SHARE BOOK</p>
+					<input type="text" class="clipboard-notification" value="http://20thingsilearned.com/" readonly="readonly" />
+					<ul>
+						<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http://20thingsilearned.com&amp;t=20%20Things%20I%20learned%20About%20Browsers%20and%20the%20Web" title="Facebook"></a></li>
+						<li class="twitter"><a href="http://twitter.com/share?original_referer=http://20thingsilearned.com&amp;text=20%20Things%20I%20learned%20About%20Browsers%20and%20the%20Web&amp;url=http://20thingsilearned.com" title="Twitter"></a></li>
+						<li class="gplus"></li>
+						<li class="url"><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="divider"></div>
+				<div class="print">
+					<a href="/en-US/all/print" target="_blank"><span class="icon"></span>PRINT BOOK</a>
+				</div>
+									<div class="divider"></div>
+					<div class="lights-wrapper">
+						<div class="lights">
+							<a href="#"><span class="icon">LIGHTS</span></a>
+						</div>
+					</div>
+					<div class="divider"></div>
+					<div class="fullscreen-wrapper" style="display: none;">
+						<div class="fullscreen">
+							<a href="#"><span class="icon"></span>FULL SCREEN</a>
+						</div>
+					</div>
+							</div>
+		</footer>
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="js/twentythings.js"></script>
+		<script src="js/twentythings.preloader.js"></script>
+		<script src="js/twentythings.history.js"></script>
+		<script src="js/twentythings.locale.js"></script>
+		<script src="js/twentythings.storage.js?v=3"></script>
+		<script src="js/twentythings.pageflip.js"></script>
+		<script src="js/twentythings.paperstack.js"></script>
+		<script src="js/twentythings.illustration.js"></script>
+		<script src="js/twentythings.navigation.js"></script>
+		<script src="js/twentythings.cache.js"></script>
+		<script src="js/twentythings.search.js"></script>
+		<script src="js/twentythings.chapternav.js"></script>
+		<script src="js/twentythings.sharing.js"></script>
+		<script src="js/twentythings.overlay.js"></script>
+		<script src="js/twentythings.tableofthings.js"></script>
+		<script src="js/twentythings.flipintro.js"></script>
+		<script type="text/javascript">
+			TT.initialize();
+		</script>
+	</body>
+</html>
