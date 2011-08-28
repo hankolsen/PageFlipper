@@ -1,0 +1,61 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+
+body {overflow-x: hidden;}
+#book{width:1660px;height:520px;position:absolute;left:50%;top:50%;margin:-270px 0 0 -630px;z-index:2;}
+#grey-mask{background:url('images/grey-mask.png') repeat-y top left;position:absolute;display:block;z-index:1100;height:600px;width:60px;}
+header,header a.logo,header nav ul li.table-of-things a,header input[type="text"],footer,footer div.sharing a,footer div.print a span.icon,footer div.lights a,.lights a span.icon,div.lights.clone,div.lights.clone a,.lights.clone a span.icon,.fullscreen a span.icon,div.fullscreen.clone,div.fullscreen.clone a,.fullscreen.clone a span.icon,footer div.fullscreen a,#shadow .shadow-left,#shadow .shadow-right,#search-dropdown div.background-top,#search-dropdown div.background-bottom,#spine div,#chapter-nav ul li,#chapter-nav a.over div.small-book,#table-of-contents ul li div.medium-book,#table-of-contents a.go-back,#pagination-prev div.arrow,#pagination-next div.arrow,#overlay div.bookmark,#overlay div.bookmark .content a.close,#overlay div.print,#overlay div.print a.close,#overlay div.print p,#overlay div.print a.downloadPdf:hover,#overlay div.print a.printBook:hover,#credits div.people ul li h3,#credits div.share ul li span.icon,#front-cover-bookmark,#sharer div.background-top,#sharer div.background-bottom,#sharer div.content ul li a,#sharer div.content p.instruction span,#sharer div.content ul li.print #front-cover-arrow,#paperstack .shadow,#overlay div.print a.disabled,#language-selector-title>a{background:transparent url('images/sprites.png?v=15') no-repeat top left;}
+#shadow{height:555px;width:1620px;position:absolute;right:20px;top:-13px;background:url(./images/repeat-x.png) repeat-x;}.home #shadow{width:790px;}
+.credits #shadow{width:790px;right:auto;left:20px;}
+#shadow .shadow-left{height:555px;width:37px;position:absolute;left:-37px;background-position:-16px -874px;}
+#shadow .shadow-right{height:555px;width:37px;position:absolute;right:-37px;background-position:-72px -874px;}
+#spine{height:522px;width:55px;position:absolute;left:803px;top:-1px;opacity:1;transition:opacity .4s linear;-o-transition:opacity .4s linear;-moz-transition:opacity .4s linear;-webkit-transition:opacity .4s linear;}
+.home #spine,.credits #spine{opacity:0;transition:opacity .4s linear;-o-transition:opacity .4s linear;-moz-transition:opacity .4s linear;-webkit-transition:opacity .4s linear;}
+#spine div{width:55px;height:1px;background-position:-28px -773px;position:absolute;top:0;}
+#spine .spine-bottom{top:auto;bottom:0;}
+#left-page{position:absolute;overflow:hidden;background-color:#fff;height:520px;}
+body.home #left-page{width:0;}
+body.home #back-cover{display: none;}
+#right-page{position:absolute;overflow:hidden;left:830px;z-index:10;background-color:#fff;height:520px;}
+body.credits #right-page{width:0;}
+#front-cover{display:none;position:absolute;left:830px;top:0;height:520px;z-index:1000;background-color:#7893c1;}
+body.home #front-cover{display:block;}
+#back-cover{display:none;position:absolute;left:0;top:0;height:520px;z-index:1001;background-color:#7893c1;}
+body.credits #back-cover{display:block;}
+
+#paperstack{position:absolute;width:34px;height:500px;top:10px;left:800px;}
+#paperstack .paper{width:1px;float:left;z-index:2;}
+#paperstack .paper.s1{height:500px;margin-top:0;background-color:#b6d6d6;}
+#paperstack .paper.s2{height:498px;margin-top:1px;background-color:#c8c9c9;}
+#paperstack .paper.s3{height:496px;margin-top:2px;background-color:#d6d6d6;}
+#paperstack .paper.s4{height:494px;margin-top:3px;background-color:#c8c9c9;}
+#paperstack .paper.s5{height:492px;margin-top:4px;background-color:#d6d6d6;}
+#paperstack .paper.s6{height:490px;margin-top:5px;background-color:#c8c9c9;}
+#paperstack .paper.s7{height:488px;margin-top:6px;background-color:#d6d6d6;}
+#paperstack .shadow{background-position:-1018px -169px;width:30px;height:500px;margin-left:0;}
+#paperstack .paper,#paperstack .shadow{transition:opacity .15s linear;-o-transition:opacity .15s linear;-moz-transition:opacity .15s linear;-webkit-transition:opacity .15s linear;}
+
+
+#pagination-prev{position:absolute;z-index:1500;top:50%;left:0;opacity:1;transition:opacity .4s linear;-o-transition:opacity .4s linear;-moz-transition:opacity .4s linear;-webkit-transition:opacity .4s linear;}
+.home #pagination-prev{opacity:0;}
+#pagination-prev div.arrow{background-position:-366px -189px;width:42px;height:70px;text-indent:-10000em;}
+#pagination-prev:hover div.arrow{background-position:-366px -290px;}
+#pagination-prev:active div.arrow{background-position:-366px -390px;}
+#pagination-prev.inactive div.arrow{background-position:-366px -490px;cursor:default;}
+#pagination-next{position:absolute;z-index:1500;top:50%;right:30px	;opacity:1;transition:opacity .4s linear;-o-transition:opacity .4s linear;-moz-transition:opacity .4s linear;-webkit-transition:opacity .4s linear;}
+.credits #pagination-next{opacity:0;}
+#pagination-next div.arrow{background-position:-471px -189px;width:42px;height:70px;text-indent:-10000em;}
+#pagination-next:hover div.arrow{background-position:-471px -290px;}
+#pagination-next:active div.arrow{background-position:-471px -390px;}
+#pagination-next.inactive div.arrow{background-position:-471px -490px;cursor:default;}
+div.page-progress{background-color:#eee;position:absolute;right:50px;top:16px;padding:6px;width:auto;visibility:hidden;opacity:0;}
+div.page-progress p.thing{display:block;font-size:10px;font-weight:bold;white-space:nowrap;}
+div.page-progress p.number{display:block;font-size:9px;white-space:nowrap;}
+.cs-CZ div.page-progress p.number,.pl-PL div.page-progress p.number{font-size:12px;}
+#pagination-next div.page-progress{right:50px;top:17px;text-align:right;}
+#pagination-next div.page-progress,#pagination-next:hover div.page-progress{transition:opacity .21s linear;-o-transition:opacity .21s linear;-moz-transition:opacity .21s linear;-webkit-transition:opacity .21s linear;}
+#pagination-next:hover div.page-progress{visibility:visible;opacity:1;}
+#pagination-prev div.page-progress{left:50px;right:auto;top:18px;text-align:left;}
+#pagination-prev div.page-progress,#pagination-prev:hover div.page-progress{transition:opacity .21s linear;-o-transition:opacity .21s linear;-moz-transition:opacity .21s linear;-webkit-transition:opacity .21s linear;}
+#pagination-prev:hover div.page-progress{visibility:visible;opacity:1;}
+
+#pages section div.page span.pageNumber{font-family:DroidSerif,Times,serif;font-size:11px;float:right;position:absolute;bottom:22px;right:20px;color:#999;}
