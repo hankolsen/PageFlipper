@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<title></title>
-		<link href="css/twentythings2.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
 	</head>
-<body class="">
+<body>
 
 	<!-- Left side grey overlay that masks out the book -->
 	  <div id="grey-mask"></div>
@@ -19,16 +19,16 @@
 	      <div class="spine-bottom"></div>
 	    </div>
 	    <div id="front-cover">
-	      <img src="css/images/front-cover.jpg" width="830" height="520">
+	      <img src="css/images/front-cover.jpg" width="580" height="570">
 	    </div>
 	    <div id="back-cover">
-	      <img src="css/images/back-cover.jpg" data-src-flipped="css/images/back-cover-flipped.jpg" width="830" height="520">
+	      <img src="css/images/back-cover.jpg" data-src-flipped="css/images/back-cover-flipped.jpg" width="580" height="570">
 	    </div>
 	    <div id="page-shadow-overlay"></div>
 	    <div id="pages">
 	    </div>
 	    <div id="left-page">
-				<img src="css/images/left-page.jpg" data-src-flipped="css/images/left-page-flipped.jpg" width="830" height="520">
+				<img src="css/images/left-page.jpg" data-src-flipped="css/images/left-page-flipped.jpg" width="580" height="570">
 			</div>
 			<div id="right-page">
 				<div id="paperstack">
@@ -41,11 +41,11 @@
 					<div class="paper s7"></div>
 					<div class="shadow"></div>
 				</div>
-				<img src="css/images/right-page.jpg" width="830" height="520">
+				<img src="css/images/right-page.jpg" width="580" height="570">
 			</div>
 			
 		</div>
-
+		<div id="mouse"></div>
 		<div id="pagination-prev" class="">
 			<a href="/en-US/old-vs-new-browsers/4">
 				<div class="arrow">LOCALE_PREVIOUS_PAGE</div>
@@ -57,5 +57,11 @@
 			</a>
 		</div>	
 	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script src="js/pageflip.js"></script>
+	<script src="js/pageflip.pageflip.js"></script>
+	<script type="text/javascript">
+		PF.initialize();
+	</script>
 </body>
 </html>

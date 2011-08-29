@@ -256,7 +256,7 @@ TT.updateLayout = function(fromScroll) {
     // Align the book to the center of the page with the right side page in
     // focus.
     $('#book').css({
-      left: center.x - (TT.BOOK_WIDTH * 0.5) //- (TT.BOOK_WIDTH_CLOSED * 0.5) +
+      left: center.x - (TT.BOOK_WIDTH * 0.5) - (TT.BOOK_WIDTH_CLOSED * 0.5)
          +  TT.BOOK_OFFSET_X,
       top: center.y - (TT.BOOK_HEIGHT * 0.5),
       margin: 0
