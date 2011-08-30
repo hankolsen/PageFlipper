@@ -18,7 +18,7 @@ a:focus,object,h1,h2,h3,h4,h5,h6{-moz-outline-style:none;border:0;}
 strong{font-weight:bold;}
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
 body{line-height:1;}
-:focus{outline:1;}
+:focus{outline:1px;}
 article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block;}
 nav ul{list-style:none;}
 blockquote,q{quotes:none;}
@@ -140,7 +140,7 @@ body.credits #back-cover{display:block;}
 #pages .template-start-5 p{margin-top:10px;}#pages .template-start-5 .image1{text-align:center;}
 #pages .template-start-5 .image2{float:right;margin-bottom:35px;}
 #pages .template-start-6 h2,#pages .template-start-6 h3{margin:10px 0 0 15px;}
-#pages .template-start-6 h2{margin:5 0 6px 0;}#pages .template-start-6 h3{margin:0 0 15px 0;}
+#pages .template-start-6 h2{margin:5px 0 6px 0;}#pages .template-start-6 h3{margin:0 0 15px 0;}
 #pages .template-start-6 .left{float:left;width:312px;}
 #pages .template-start-6 .right{float:right;width:312px;margin-right:10px;}
 #pages .template-start-7 h2,#pages .template-start-7 h3{text-align:center;margin-bottom:5px;}
